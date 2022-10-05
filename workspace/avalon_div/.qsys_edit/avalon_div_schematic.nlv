@@ -1,0 +1,23 @@
+# # File gsaved with Nlview version 6.3.8  2013-12-19 bk=1.2992 VDI=34 GEI=35
+# 
+preplace inst avalon_div.cpu.reset_bridge -pg 1
+preplace inst avalon_div.div32 -pg 1 -lvl 3 -y 190
+preplace inst avalon_div.sysid -pg 1 -lvl 3 -y 110
+preplace inst avalon_div -pg 1 -lvl 1 -y 40 -regy -20
+preplace inst avalon_div.cpu.clock_bridge -pg 1
+preplace inst avalon_div.cpu -pg 1 -lvl 2 -y 300
+preplace inst avalon_div.jtag_uart -pg 1 -lvl 3 -y 310
+preplace inst avalon_div.sseg -pg 1 -lvl 3 -y 410
+preplace inst avalon_div.cpu.cpu -pg 1
+preplace inst avalon_div.clk_0 -pg 1 -lvl 1 -y 320
+preplace inst avalon_div.onchip_memory -pg 1 -lvl 3 -y 30
+preplace netloc FAN_OUT<net_container>avalon_div</net_container>(SLAVE)onchip_memory.clk1,(SLAVE)cpu.clk,(SLAVE)sseg.clk,(SLAVE)sysid.clk,(SLAVE)jtag_uart.clk,(MASTER)clk_0.clk,(SLAVE)div32.clock) 1 1 2 260 220 700
+preplace netloc FAN_OUT<net_container>avalon_div</net_container>(MASTER)cpu.irq,(SLAVE)jtag_uart.irq,(SLAVE)div32.div_intr) 1 2 1 740
+preplace netloc EXPORT<net_container>avalon_div</net_container>(SLAVE)sseg.external_connection,(SLAVE)avalon_div.sseg) 1 0 3 NJ 200 NJ 200 NJ
+preplace netloc INTERCONNECT<net_container>avalon_div</net_container>(MASTER)cpu.data_master,(SLAVE)onchip_memory.s1,(SLAVE)sseg.s1,(SLAVE)jtag_uart.avalon_jtag_slave,(SLAVE)sysid.control_slave,(SLAVE)div32.div_cpu,(MASTER)cpu.instruction_master,(SLAVE)cpu.debug_mem_slave) 1 1 2 300 260 720
+preplace netloc INTERCONNECT<net_container>avalon_div</net_container>(SLAVE)onchip_memory.reset1,(MASTER)clk_0.clk_reset,(SLAVE)div32.reset,(SLAVE)jtag_uart.reset,(SLAVE)sseg.reset,(SLAVE)sysid.reset,(MASTER)cpu.debug_reset_request,(SLAVE)cpu.reset) 1 1 2 280 240 680
+preplace netloc EXPORT<net_container>avalon_div</net_container>(SLAVE)clk_0.clk_in_reset,(SLAVE)avalon_div.reset) 1 0 1 NJ
+preplace netloc EXPORT<net_container>avalon_div</net_container>(SLAVE)div32.div_ledg,(SLAVE)avalon_div.ledg) 1 0 3 NJ 180 NJ 180 NJ
+preplace netloc EXPORT<net_container>avalon_div</net_container>(SLAVE)avalon_div.clk,(SLAVE)clk_0.clk_in) 1 0 1 NJ
+levelinfo -pg 1 0 50 960
+levelinfo -hier avalon_div 60 90 420 800 950

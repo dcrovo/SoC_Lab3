@@ -1,0 +1,157 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "ready",
+					"strict" : false
+				},
+				{
+					"name" : "done_tick",
+					"strict" : false
+				},
+				{
+					"name" : "quo[0]",
+					"strict" : false
+				},
+				{
+					"name" : "quo[1]",
+					"strict" : false
+				},
+				{
+					"name" : "quo[2]",
+					"strict" : false
+				},
+				{
+					"name" : "quo[3]",
+					"strict" : false
+				},
+				{
+					"name" : "quo[4]",
+					"strict" : false
+				},
+				{
+					"name" : "quo[5]",
+					"strict" : false
+				},
+				{
+					"name" : "quo[6]",
+					"strict" : false
+				},
+				{
+					"name" : "quo[7]",
+					"strict" : false
+				},
+				{
+					"name" : "rmd[0]",
+					"strict" : false
+				},
+				{
+					"name" : "rmd[1]",
+					"strict" : false
+				},
+				{
+					"name" : "rmd[2]",
+					"strict" : false
+				},
+				{
+					"name" : "rmd[3]",
+					"strict" : false
+				},
+				{
+					"name" : "rmd[4]",
+					"strict" : false
+				},
+				{
+					"name" : "rmd[5]",
+					"strict" : false
+				},
+				{
+					"name" : "rmd[6]",
+					"strict" : false
+				},
+				{
+					"name" : "rmd[7]",
+					"strict" : false
+				},
+				{
+					"name" : "start",
+					"strict" : false
+				},
+				{
+					"name" : "clk",
+					"strict" : false
+				},
+				{
+					"name" : "reset",
+					"strict" : false
+				},
+				{
+					"name" : "dvnd[0]",
+					"strict" : false
+				},
+				{
+					"name" : "dvnd[1]",
+					"strict" : false
+				},
+				{
+					"name" : "dvnd[2]",
+					"strict" : false
+				},
+				{
+					"name" : "dvnd[3]",
+					"strict" : false
+				},
+				{
+					"name" : "dvnd[4]",
+					"strict" : false
+				},
+				{
+					"name" : "dvnd[5]",
+					"strict" : false
+				},
+				{
+					"name" : "dvnd[6]",
+					"strict" : false
+				},
+				{
+					"name" : "dvnd[7]",
+					"strict" : false
+				},
+				{
+					"name" : "dvsr[4]",
+					"strict" : false
+				},
+				{
+					"name" : "dvsr[7]",
+					"strict" : false
+				},
+				{
+					"name" : "dvsr[6]",
+					"strict" : false
+				},
+				{
+					"name" : "dvsr[5]",
+					"strict" : false
+				},
+				{
+					"name" : "dvsr[1]",
+					"strict" : false
+				},
+				{
+					"name" : "dvsr[0]",
+					"strict" : false
+				},
+				{
+					"name" : "dvsr[3]",
+					"strict" : false
+				},
+				{
+					"name" : "dvsr[2]",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

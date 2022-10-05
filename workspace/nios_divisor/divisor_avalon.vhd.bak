@@ -1,0 +1,20 @@
+LIBRARY IEEE;
+USE ieee.std_logic_1164.all;
+--------------------------------------------------------------------------------
+ENTITY	divisor_avalon IS
+	GENERIC	(		W					:	INTEGER	:=32;
+						CBIT				:	INTEGER	:=6);	--CBIT = log2(W) +1
+	PORT		(		-- TO BE CONNECTED TO AVALON CLOCK INPUT INTERFACE
+						clk				:	IN		STD_LOGIC;
+						reset				:	IN		STD_LOGIC;
+						-- TO BE CONNECTED TO AVALON MM SLAVE INTERFACE
+						div_address		:	IN		STD_LOGIC_VECTOR(2 DOWNTO 0);
+						div_chipselect	:	IN		STD_LOGIC;
+						div_write		:	IN		STD_LOGIC;
+						div_writedata	:	IN		STD_LOGIC_VECTOR(W-1 DOWNTO 0);
+						div_readdata	:	OUT	STD_LOGIC_VECTOR(W-1 DOWNTO 0);
+						--	TO BE CONNECTED TO AVALON INTERRUPT	SENDER INTERFACE
+						div_irq			:	OUT	STD_LOGIC;
+						--	TO BE CONNECTED TO AVALON CONDUIT INTERFACE
+						DIV_LED			:	OUT	STD_LOGIC_VECTOR(7 DOWNTO 0));
+END ENTITY divisor_avalon;
