@@ -1,5 +1,5 @@
 Assembler report for avalon_div
-Wed Oct  5 17:18:23 2022
+Wed Oct  5 17:53:23 2022
 Quartus Prime Version 21.1.1 Build 850 06/23/2022 SJ Lite Edition
 
 
@@ -39,7 +39,7 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Wed Oct  5 17:18:23 2022 ;
+; Assembler Status      ; Successful - Wed Oct  5 17:53:23 2022 ;
 ; Revision Name         ; avalon_div                            ;
 ; Top-level Entity Name ; nios_divisor_top                      ;
 ; Family                ; Cyclone V                             ;
@@ -64,13 +64,13 @@ https://fpgasoftware.intel.com/eula.
 +--------+------------------------+--------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------+
-; Assembler Generated Files                                                                                                       ;
-+---------------------------------------------------------------------------------------------------------------------------------+
-; File Name                                                                                                                       ;
-+---------------------------------------------------------------------------------------------------------------------------------+
-; /home/danielcrovo/Documents/Daniel/01.Study/01.MScEE/02.Semester2/SoC/Taller 3/workspace/avalon_div/output_files/avalon_div.sof ;
-+---------------------------------------------------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------+
+; Assembler Generated Files                                                                                                          ;
++------------------------------------------------------------------------------------------------------------------------------------+
+; File Name                                                                                                                          ;
++------------------------------------------------------------------------------------------------------------------------------------+
+; /home/danielcrovo/Documents/Daniel/01.Study/01.MScEE/02.Semester2/SoC/Taller3_SoC/workspace/avalon_div/output_files/avalon_div.sof ;
++------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +------------------------------------------+
@@ -78,8 +78,8 @@ https://fpgasoftware.intel.com/eula.
 +----------------+-------------------------+
 ; Option         ; Setting                 ;
 +----------------+-------------------------+
-; JTAG usercode  ; 0x06009819              ;
-; Checksum       ; 0x06009819              ;
+; JTAG usercode  ; 0x06016792              ;
+; Checksum       ; 0x06016792              ;
 +----------------+-------------------------+
 
 
@@ -89,13 +89,13 @@ https://fpgasoftware.intel.com/eula.
 Info: *******************************************************************
 Info: Running Quartus Prime Assembler
     Info: Version 21.1.1 Build 850 06/23/2022 SJ Lite Edition
-    Info: Processing started: Wed Oct  5 17:18:17 2022
+    Info: Processing started: Wed Oct  5 17:53:17 2022
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off avalon_div -c avalon_div
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (115030): Assembler is generating device programming files
 Info: Quartus Prime Assembler was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 781 megabytes
-    Info: Processing ended: Wed Oct  5 17:18:23 2022
+    Info: Peak virtual memory: 779 megabytes
+    Info: Processing ended: Wed Oct  5 17:53:23 2022
     Info: Elapsed time: 00:00:06
     Info: Total CPU time (on all processors): 00:00:06
 
