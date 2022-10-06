@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include "system.h"
+#include "alt_types.h"
+
+/* Register Offset Definition*/
+#define DVND_REG_OFT 0	// Dividend register address offset
+#define DVSR_REG_OFT 1	// Divisor register address offset
+#define STRT_REG_OFT 2	// Start register address offset
+#define QUOT_REG_OFT 3	// quotient register address offset
+#define REMN_REG_OFT 4	// remainder register address offset
+#define REDY_REG_OFT 5	// ready signal register address offset
+#define DONE_REG_OFT 6	// done-tick register address offset
+
+/**********************************************************
+ * function prototypes
+ **********************************************************/
+alt_u8 sseg_conv_hex(int hex);
+void sseg_disp_ptn(alt_u32 base, alt_u8 *ptn);
+
+/* Main Program*/
+
+int main()
+{
+	alt_u32 a, b, q, r, ready, done;
+	alt_u8 dil_msg[4]={sseg_conv_hex(13), 0xfb, 0xff, sseg_conv_hex(2)};
+	sseg_disp_ptn(SSEG_BASE, dil_msg); // display "di 2"
+	printf("Division accelerator test: \n\n");
+
+  return 0;
+}

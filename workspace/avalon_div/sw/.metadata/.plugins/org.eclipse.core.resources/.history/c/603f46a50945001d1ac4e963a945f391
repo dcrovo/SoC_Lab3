@@ -1,0 +1,112 @@
+#include <stdio.h>
+#include "system.h"
+#include "alt_types.h"
+#include "io.h"
+
+/* Register Offset Definition*/
+#define DVND_REG_OFT 0	// Dividend register address offset
+#define DVSR_REG_OFT 1	// Divisor register address offset
+#define STRT_REG_OFT 2	// Start register address offset
+#define QUOT_REG_OFT 3	// quotient register address offset
+#define REMN_REG_OFT 4	// remainder register address offset
+#define REDY_REG_OFT 5	// ready signal register address offset
+#define DONE_REG_OFT 6	// done-tick register address offset
+
+/**********************************************************
+ * function prototypes
+ **********************************************************/
+alt_u8 sseg_conv_hex(int hex);
+void sseg_disp_ptn(alt_u32 base, alt_u8 *ptn);
+
+/* Main Program*/
+
+int main()
+{
+	alt_u32 a, b, q, r, ready, done;
+	alt_u8 dil_msg[4]={sseg_conv_hex(13), 0xfb, 0xff, sseg_conv_hex(2)};
+	sseg_disp_ptn(SSEG_BASE, dil_msg); // display "di 2"
+	printf("Division accelerator test: \n\n");
+
+	while(1){
+		printf("Perform division a/b = q remainder r\n");
+		printf("Enter a: ");
+		scanf("%d", &a);
+		printf("Enter b: ");
+		scanf("%d", &b);
+
+		/* send data to division accelerator*/
+		IOWR(DIV32_BASE, DVND_REG_OFT, a);
+		IOWR(DIV32_BASE, DVSR_REG_OFT, b);
+
+		/*wait until the division accelerator is ready*/
+		while(1){
+			ready = IORD(DIV32_BASE, REDY_REG_OFT) & 0x00000001;
+			if(ready==1){break;}
+		}
+
+
+		/* generate a 1-pulse */
+		printf("Start... \n");
+		IOWR(DIV32_BASE, STRT_REG_OFT, 1);
+
+		/* wait for completion*/
+		while(1){
+			done = IORD(DIV32_BASE, DONE_REG_OFT) % 0x00000001;
+			if(done==1){break;}
+			printf(done);
+		}
+		/*clear done-tick register*/
+		IOWR(DIV32_BASE, DONE_REG_OFT, 1);
+
+		/* retrieve results from division accelerator*/
+		q = IORD(DIV32_BASE, QUOT_REG_OFT);
+		r = IORD(DIV32_BASE, REMN_REG_OFT);
+		printf("Hardware: %u / %u = %u reminder %u \n\n\n", a,b, q, r);
+	}
+
+
+}
+
+/**************************************************************
+ function> sseg_conv_hex()
+ convert a hex digit to a 7-segment pattern
+ Argument	:
+ 	 	hex	:	hex digit (0-15)
+ Return:
+ 		7-segment display pattern
+ Note:	blank pattern is returned if hex>15
+ **************************************************************/
+alt_u8 sseg_conv_hex(int hex){
+	static const alt_u8 SSEG_HEX_TABLE[16] = {
+			0x40, 0x79, 0x24, 0x30, 0x19, 0x92, 0x20, 0x78, 0x00, 0x10,
+			0x88, 0x03, 0x46, 0x21, 0x06, 0x0E};
+	alt_u8 ptn;
+	if(hex<16) {
+		ptn = SSEG_HEX_TABLE[hex];
+	}else{
+		ptn =0xFF;
+	}
+	return ptn;
+}
+
+/**************************************************************
+ function> sseg_dips_ptn()
+ display pattern in four 7-segment pattern
+ Argument	:
+ 	 	hex	:	base address of 7-segment display
+ 	 	ptn	:	pointer to a 4-element array that holds the patterns
+ Return:
+ 		void
+ Note:
+ **************************************************************/
+void sseg_disp_ptn(alt_u32 base, alt_u8 *ptn){
+	alt_u32 sseg_data;
+	int i;
+
+	/*Form a 32-bit data*/
+	for(i=0; i<4; i++){
+		sseg_data = (sseg_data<<4) | *ptn;
+		ptn++;
+	}
+	IOWR(base, 0, sseg_data);
+}

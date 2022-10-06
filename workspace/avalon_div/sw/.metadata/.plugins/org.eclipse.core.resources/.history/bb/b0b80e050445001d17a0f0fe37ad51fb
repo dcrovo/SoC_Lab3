@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include "system.h"
+
+/* Register Offset Definition*/
+#define DVND_REG_OFT 0	// Dividend register address offset
+#define DVSR_REG_OFT 1	// Divisor register address offset
+#define STRT_REG_OFT 2	// Start register address offset
+#define QUOT_REG_OFT 3	// quotient register address offset
+#define REMN_REG_OFT 4	// remainder register address offset
+#define REDY_REG_OFT 5	// ready signal register address offset
+#define DONE_REG_OFT 6	// done-tick register address offset
+
+/**********************************************************
+ * function prototypes
+ **********************************************************/
+alt_u8 sseg_conv_hex(int hex);
+void sseg_disp_ptn(alt_u32 base, alt_u8 *ptn);
+
+/* Main Program*/
+
+int main()
+{
+
+
+  return 0;
+}

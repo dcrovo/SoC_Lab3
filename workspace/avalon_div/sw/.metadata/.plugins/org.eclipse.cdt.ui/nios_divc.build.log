@@ -1,0 +1,81 @@
+19:03:18 **** Incremental Build of configuration Nios II for project nios_divc ****
+make all 
+Info: Building ../nios_divc_bsp/
+make --no-print-directory -C ../nios_divc_bsp/
+[BSP build complete]
+Info: Compiling hello_world.c to obj/default/hello_world.o
+nios2-elf-gcc -xc -MP -MMD -c -I../nios_divc_bsp//HAL/inc -I../nios_divc_bsp/ -I../nios_divc_bsp//drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o "obj/default/hello_world.o" "hello_world.c"
+hello_world.c: In function 'main':
+hello_world.c:33:25: warning: format '%d' expects argument of type 'int *', but argument 2 has type 'alt_u32 *' {aka 'long unsigned int *'} [-Wformat=]
+   33 |                 scanf("%d", &a);
+      |                        ~^   ~~
+      |                         |   |
+      |                         |   alt_u32 * {aka long unsigned int *}
+      |                         int *
+      |                        %ld
+hello_world.c:35:25: warning: format '%d' expects argument of type 'int *', but argument 2 has type 'alt_u32 *' {aka 'long unsigned int *'} [-Wformat=]
+   35 |                 scanf("%d", &b);
+      |                        ~^   ~~
+      |                         |   |
+      |                         |   alt_u32 * {aka long unsigned int *}
+      |                         int *
+      |                        %ld
+hello_world.c:63:36: warning: format '%u' expects argument of type 'unsigned int', but argument 2 has type 'alt_u32' {aka 'long unsigned int'} [-Wformat=]
+   63 |                 printf("Hardware: %u / %u = %u reminder %u \n\n\n", a,b, q, r);
+      |                                   ~^                                ~
+      |                                    |                                |
+      |                                    unsigned int                     alt_u32 {aka long unsigned int}
+      |                                   %lu
+hello_world.c:63:41: warning: format '%u' expects argument of type 'unsigned int', but argument 3 has type 'alt_u32' {aka 'long unsigned int'} [-Wformat=]
+Info: Linking nios_divc.elf
+   63 |                 printf("Hardware: %u / %u = %u reminder %u \n\n\n", a,b, q, r);
+nios2-elf-g++ -T'../nios_divc_bsp//linker.x' -msys-crt0='../nios_divc_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../nios_divc_bsp/   -Wl,-Map=nios_divc.map   -O0 -g -Wall  -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o nios_divc.elf obj/default/hello_world.o -lm -msys-lib=m
+      |                                        ~^                             ~
+      |                                         |                             |
+      |                                         unsigned int                  alt_u32 {aka long unsigned int}
+      |                                        %lu
+hello_world.c:63:46: warning: format '%u' expects argument of type 'unsigned int', but argument 4 has type 'alt_u32' {aka 'long unsigned int'} [-Wformat=]
+   63 |                 printf("Hardware: %u / %u = %u reminder %u \n\n\n", a,b, q, r);
+      |                                             ~^                           ~
+      |                                              |                           |
+      |                                              unsigned int                alt_u32 {aka long unsigned int}
+      |                                             %lu
+hello_world.c:63:58: warning: format '%u' expects argument of type 'unsigned int', but argument 5 has type 'alt_u32' {aka 'long unsigned int'} [-Wformat=]
+   63 |                 printf("Hardware: %u / %u = %u reminder %u \n\n\n", a,b, q, r);
+      |                                                         ~^                  ~
+      |                                                          |                  |
+      |                                                          unsigned int       alt_u32 {aka long unsigned int}
+      |                                                         %lu
+hello_world.c:66:36: warning: format '%u' expects argument of type 'unsigned int', but argument 2 has type 'alt_u32' {aka 'long unsigned int'} [-Wformat=]
+   66 |                 printf("Software: %u / %u = %u remainder %u \n\n\n", a, b, a/b, a%b);
+      |                                   ~^                                 ~
+      |                                    |                                 |
+      |                                    unsigned int                      alt_u32 {aka long unsigned int}
+      |                                   %lu
+hello_world.c:66:41: warning: format '%u' expects argument of type 'unsigned int', but argument 3 has type 'alt_u32' {aka 'long unsigned int'} [-Wformat=]
+   66 |                 printf("Software: %u / %u = %u remainder %u \n\n\n", a, b, a/b, a%b);
+      |                                        ~^                               ~
+      |                                         |                               |
+      |                                         unsigned int                    alt_u32 {aka long unsigned int}
+      |                                        %lu
+hello_world.c:66:46: warning: format '%u' expects argument of type 'unsigned int', but argument 4 has type 'alt_u32' {aka 'long unsigned int'} [-Wformat=]
+   66 |                 printf("Software: %u / %u = %u remainder %u \n\n\n", a, b, a/b, a%b);
+      |                                             ~^                             ~~~
+      |                                              |                              |
+      |                                              unsigned int                   alt_u32 {aka long unsigned int}
+      |                                             %lu
+hello_world.c:66:59: warning: format '%u' expects argument of type 'unsigned int', but argument 5 has type 'alt_u32' {aka 'long unsigned int'} [-Wformat=]
+   66 |                 printf("Software: %u / %u = %u remainder %u \n\n\n", a, b, a/b, a%b);
+      |                                                          ~^                     ~~~
+      |                                                           |                      |
+      |                                                           unsigned int           alt_u32 {aka long unsigned int}
+      |                                                          %lu
+nios2-elf-insert nios_divc.elf --thread_model hal --cpu_name cpu --qsys true --simulation_enabled false --id 0 --sidp 0x101070 --timestamp 1665004730 --stderr_dev jtag_uart --stdin_dev jtag_uart --stdout_dev jtag_uart --sopc_system_name avalon_div --quartus_project_dir "/home/danielcrovo/Documents/Daniel/01.Study/01.MScEE/02.Semester2/SoC/Taller3_SoC/workspace/avalon_div" --jdi ../..//output_files/avalon_div.jdi --sopcinfo /home/danielcrovo/Documents/Daniel/01.Study/01.MScEE/02.Semester2/SoC/Taller3_SoC/workspace/avalon_div/software/nios_divc_bsp/../../avalon_div.sopcinfo
+Info: (nios_divc.elf) 107 KBytes program size (code + initialized data).
+Info:                 135 KBytes free for stack + heap.
+Info: Creating nios_divc.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source nios_divc.elf >nios_divc.objdump
+[nios_divc build complete]
+
+19:03:18 Build Finished (took 366ms)
+
