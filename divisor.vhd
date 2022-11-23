@@ -3,8 +3,8 @@ USE ieee.std_logic_1164.all;
 USE ieee.numeric_std.all;
 -----------------------------------------------------------------------------------------------
 ENTITY divisor IS
-	GENERIC (	W				:	INTEGER	:=8;
-					CBIT			:	INTEGER	:=4); --CBIT=log2(W) +1
+	GENERIC (	W				:	INTEGER	:=32;
+					CBIT			:	INTEGER	:=6); --CBIT=log2(W) +1
 	PORT	(		clk			:	IN STD_LOGIC;
 					reset			:	IN STD_LOGIC;
 					start			:	IN STD_LOGIC;
@@ -53,7 +53,7 @@ BEGIN
 	
 	
 	PROCESS (state_reg, n_reg, rh_reg, rl_reg, d_reg,
-				start, dvsr, dvnd, q_bit, rh_tmp, n_next)
+				start, dvsr, dvnd, q_bit, rh_tmp, n_next, rl_next)
 
 	BEGIN
 		CASE state_reg IS

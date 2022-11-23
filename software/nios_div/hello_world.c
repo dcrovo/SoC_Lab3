@@ -9,7 +9,7 @@
 #define STRT_REG_OFT 2	// Start register address offset
 #define QUOT_REG_OFT 3	// quotient register address offset
 #define REMN_REG_OFT 4	// remainder register address offset
-#define REDY_REG_OFT 5	// ready signal register address offset
+#define READY_REG_OFT 5	// ready signal register address offset
 #define DONE_REG_OFT 6	// done-tick register address offset
 
 /**********************************************************
@@ -40,7 +40,7 @@ int main()
 
 		/*wait until the division accelerator is ready*/
 		while(1){
-			ready = IORD(DIV32_BASE, REDY_REG_OFT) & 0x00000001;
+			ready = IORD(DIV32_BASE, READY_REG_OFT) & 0x00000001;
 			if(ready==1){break;}
 		}
 
@@ -60,6 +60,7 @@ int main()
 		/* retrieve results from division accelerator*/
 		q = IORD(DIV32_BASE, QUOT_REG_OFT);
 		r = IORD(DIV32_BASE, REMN_REG_OFT);
+		printf("%u\n",q);
 		printf("Hardware: %u / %u = %u reminder %u \n\n\n", a,b, q, r);
 
 		/*compare results with built-in C operators*/

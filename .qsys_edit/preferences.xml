@@ -7,8 +7,7 @@
    <irq preferredWidth="34" />
   </columns>
  </systemtable>
- <library
-   expandedCategories="Library,Library/University Program,Library/Processors and Peripherals,Project,Library/Basic Functions/Simulation; Debug and Verification/Debug and Performance,Library/Basic Functions/Simulation; Debug and Verification,Library/University Program/Clock,Library/Basic Functions,Library/Processors and Peripherals/Hard Processor Systems" />
+ <library expandedCategories="Library,Project,Project/Other" />
  <window width="1920" height="1080" x="2560" y="0" />
  <generation synthesis="VHDL" />
 </preferences>

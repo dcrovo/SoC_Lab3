@@ -1,11 +1,11 @@
 <sld_project_info>
   <project>
-    <hash md5_digest_80b="b5ada637abf94e7cd728"/>
+    <hash md5_digest_80b="52beac56e3401d90e54c"/>
   </project>
   <file_info>
-    <file device="5CSEMA5F31C6" path="Lab3_SoC_time_limited.sof" usercode="0xFFFFFFFF"/>
+    <file device="5CSEMA5F31C6" path="Lab3_SoC.sof" usercode="0xFFFFFFFF"/>
   </file_info>
-  <hub_info hub_ir_width="5" ir_width="2" node_addr_width="2" node_count="3"/>
+  <hub_info hub_ir_width="5" ir_width="2" node_addr_width="2" node_count="2"/>
   <node_info>
     <node hpath="div_sys:nios_unit|div_sys_cpu:cpu|div_sys_cpu_cpu:cpu|div_sys_cpu_cpu_nios2_oci:the_div_sys_cpu_cpu_nios2_oci|div_sys_cpu_cpu_debug_slave_wrapper:the_div_sys_cpu_cpu_debug_slave_wrapper|sld_virtual_jtag_basic:div_sys_cpu_cpu_debug_slave_phy|sld_virtual_jtag_impl:sld_virtual_jtag_impl_inst" instance_id="0" mfg_id="70" node_id="34" sld_node_info="0x19104600" version="3">
       <parameters>
@@ -135,12 +135,11 @@
         <port name="jtag.bp.nios_unit_jtag_uart_div_sys_jtag_uart_alt_jtag_atlantic_ir_out_0_"/>
       </outputs>
     </node>
-    <node hpath="pzdyqx:nabboc" instance_id="0" mfg_id="110" node_id="1" sld_node_info="0x86E00" version="0"/>
   </node_info>
   <sld_infos>
     <sld_info hpath="div_sys:nios_unit" name="nios_unit">
       <assignment_values>
-        <assignment_value text="QSYS_NAME div_sys HAS_SOPCINFO 1 GENERATION_ID 1669182123"/>
+        <assignment_value text="QSYS_NAME div_sys HAS_SOPCINFO 1 GENERATION_ID 1669186102"/>
       </assignment_values>
       <parameters/>
     </sld_info>
