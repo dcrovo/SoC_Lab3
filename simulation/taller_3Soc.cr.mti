@@ -1,0 +1,10 @@
+/home/danielcrovo/Documents/Daniel/01.Study/01.MScEE/02.Semester2/SoC/Taller3_SoC/workspace/divisor.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none /home/danielcrovo/Documents/Daniel/01.Study/01.MScEE/02.Semester2/SoC/Taller3_SoC/workspace/divisor.vhd
+Questa Intel Starter FPGA Edition-64 vcom 2021.2 Compiler 2021.04 Apr 14 2021
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity divisor
+-- Compiling architecture rtl of divisor
+
+} {} {}}
